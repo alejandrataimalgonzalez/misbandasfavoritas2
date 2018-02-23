@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+    <h1>{{ title }}</h1>
+    <h2>información de {{Banda.nombre}}!</h2> 
+ <div>
+    <label> nombre: </label>
+    <input *ngIf= "banda" [(ngModel)]= "banda.nombre" placeholder="nombre de la banda">
+
+    <ul class="bandas">
+      <li
+      [class.selected]="bandaItem ===banda"      
+      *ngFor="let bandaItem of bandas"
+      (click)="seleccionar(bandaItem)">
+         <span class="insignia"> {{bandaItem.id}}</span> {{bandaItem.nombre}}
+      </li>
+    </ul>
+ </div>
+
